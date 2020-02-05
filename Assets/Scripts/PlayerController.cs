@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         Vector3 targetVelocity = new Vector3(gamepadLeftStick.x, 0, gamepadLeftStick.y);
         targetVelocity *= speed;
 
-        transform.position += targetVelocity;
+        _rigidbody.velocity = targetVelocity;
 
         Vector3 direction = new Vector3(gamepadLeftStick.x, 0, gamepadLeftStick.y);
         if (direction.magnitude > 0.01F)
