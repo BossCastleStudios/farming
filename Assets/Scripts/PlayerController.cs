@@ -39,12 +39,9 @@ public class PlayerController : MonoBehaviour
             if (!IsGathering && Gamepad.current.aButton.isPressed)
             {
                 IsGathering = true;
+                isWalking = false;
                 StartCoroutine(GatherResources(nearbySource));
             }
-        }
-        else if (IsGathering)
-        {
-            IsGathering = false;
         }
     }
 
