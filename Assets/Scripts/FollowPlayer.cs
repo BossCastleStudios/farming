@@ -8,6 +8,13 @@ public class FollowPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = player.transform.position;
+        if (player != null)
+        {
+            transform.position = player.transform.position;
+        }
+        else
+        {
+            transform.position = Vector3.zero;
+        }
     }
 }
