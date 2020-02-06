@@ -47,13 +47,14 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator GatherResources(ResourceSource source)
     {
+        source.StartGathering();
         while (source.resourceAmount > 0)
         {
-            int before = source.resourceAmount;
-            source.resourceAmount -= gatherSpeed;
-            source.resourceAmount = Mathf.Max(0, source.resourceAmount);
-            WoodResource += before - source.resourceAmount;
-            yield return new WaitForSeconds(1);
+            WoodResource += source.GatherResource(gatherSpeed);
+            if (source.resourceAmount > 0)
+            {
+                yield return new WaitForSeconds(1);
+            }
         }
 
         IsGathering = false;
