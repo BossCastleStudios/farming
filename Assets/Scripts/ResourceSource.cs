@@ -41,7 +41,6 @@ public class ResourceSource : MonoBehaviour
     {
         if (resourceAmount <= 0 && !isRegening)
         {
-            Debug.Log("Starting regen...");
             isRegening = true;
             StartCoroutine(RegenCoroutine());
         }
