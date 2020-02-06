@@ -59,8 +59,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59050be12a6c4c45bdad55afdbd2e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders:
+  - {fileID: 1075277567}
+  - {fileID: 1934532075}
   resourceType: 0
   resourceAmount: 100
+  regenDelay: 246
+  regenRate: 6
 --- !u!114 &5045042329143977575
 MonoBehaviour:
   m_ObjectHideFlags: 0

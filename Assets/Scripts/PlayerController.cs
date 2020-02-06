@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         ResourceSource source = other.GetComponent<ResourceSource>();
-        if (source != null && source.resourceAmount > 0)
+        if (source != null && source.CanGather)
         {
             CanGatherResources = true;
             nearbySource = source;
