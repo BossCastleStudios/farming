@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
             {
                 IsGathering = true;
                 isWalking = false;
+                _rigidbody.velocity = Vector3.zero;
                 StartCoroutine(GatherResources(nearbySource));
             }
         }
