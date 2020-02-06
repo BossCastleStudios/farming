@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +9,6 @@ public class DisplayResource : MonoBehaviour
 
     void Update()
     {
-        wood.text = $"Wood: {player.WoodResource}";
+        wood.text = $"Wood: {player.WoodResource:###,###,###,###}";
     }
 }
