@@ -9390,32 +9390,12 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_GatherSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_ClosestWoodBuilding
       value: 
       objectReference: {fileID: 605340203}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_ResourceCarryCapacity
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_TreeCheckDistance
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 5299936101600906485, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_Name
       value: Worker (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Speed
-      value: 4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Acceleration
-      value: 4.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
@@ -15125,32 +15105,12 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_GatherSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_ClosestWoodBuilding
       value: 
       objectReference: {fileID: 605340203}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_ResourceCarryCapacity
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_TreeCheckDistance
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 5299936101600906485, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_Name
       value: Worker (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Speed
-      value: 4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Acceleration
-      value: 4.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
@@ -34506,32 +34466,12 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_GatherSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_ClosestWoodBuilding
       value: 
       objectReference: {fileID: 605340203}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_ResourceCarryCapacity
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_TreeCheckDistance
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 5299936101600906485, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_Name
       value: Worker (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Speed
-      value: 4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Acceleration
-      value: 4.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
@@ -35984,32 +35924,12 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_GatherSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_ClosestWoodBuilding
       value: 
       objectReference: {fileID: 605340203}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_ResourceCarryCapacity
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_TreeCheckDistance
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 5299936101600906485, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_Name
       value: Worker (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Speed
-      value: 4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Acceleration
-      value: 4.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
@@ -44676,32 +44596,12 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_GatherSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_ClosestWoodBuilding
       value: 
       objectReference: {fileID: 605340203}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_ResourceCarryCapacity
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_TreeCheckDistance
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 5299936101600906485, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_Name
       value: Worker (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Speed
-      value: 4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Acceleration
-      value: 4.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
@@ -47904,44 +47804,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: pathCornerDebugNodePrefab
-      value: 
-      objectReference: {fileID: 1075469294467859635, guid: 1d55519d77b069b40b7cc0de6fc80e91, type: 3}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: pathMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: gatherSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_GatherSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_ClosestWoodBuilding
       value: 
       objectReference: {fileID: 605340203}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_ResourceCarryCapacity
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5266550740876116987, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_TreeCheckDistance
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 5299936101600906485, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
       propertyPath: m_Name
       value: Worker
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Speed
-      value: 4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402854406858640697, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}
-      propertyPath: m_Acceleration
-      value: 4.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23f6879c5fbd6140b5f24144e8a9d71, type: 3}

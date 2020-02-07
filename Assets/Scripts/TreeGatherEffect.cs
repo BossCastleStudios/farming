@@ -68,4 +68,10 @@ public class TreeGatherEffect : MonoBehaviour, IGatherEffect
             trunk.SetActive(true);
         }
     }
+
+    public void StopGathering()
+    {
+        particles.Stop();
+        chopping.Stop();
+    }
 }

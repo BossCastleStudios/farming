@@ -9,4 +9,5 @@ public interface IGatherEffect
     void StartGathering();
     void OnGather(float newPercent);
     void OnRegen(float newPercent);
+    void StopGathering();
 }

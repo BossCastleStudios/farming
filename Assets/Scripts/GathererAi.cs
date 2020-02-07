@@ -48,7 +48,7 @@ public class GathererAi : MonoBehaviour
             .Where(h => h.GetComponent<ResourceSource>() != null)
             .Select(h => h.transform)
             .Where(t => !lockedTrees.Contains(t))
-            .OrderBy(h => Vector3.Distance(this.transform.position, h.transform.position))
+            .OrderBy(h => Vector3.Distance(this.transform.position, h.position))
             .ToList();
         this.currentTargetIndex = 0;
         return this.allNearbyTargets.Count > 0;
@@ -111,6 +111,7 @@ public class GathererAi : MonoBehaviour
                 yield return new WaitForSeconds(1);
             }
         }
+        source.StopGathering();
 
         lockedTrees.Remove(source.transform);
 

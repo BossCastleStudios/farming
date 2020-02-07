@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
                 yield return new WaitForSeconds(1);
             }
         }
+        source.StopGathering();
 
         IsGathering = false;
         CanGatherResources = false;
