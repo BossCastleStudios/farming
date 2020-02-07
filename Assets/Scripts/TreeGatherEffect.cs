@@ -22,6 +22,7 @@ public class TreeGatherEffect : MonoBehaviour, IGatherEffect
         if (newPercent < 0.01)
         {
             trunk.SetActive(false);
+            particles.Stop();
         }
         else if (newPercent < 0.33)
         {
