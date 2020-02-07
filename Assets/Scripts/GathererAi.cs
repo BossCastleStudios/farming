@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using com.bosscastlestudios.farming;
 using UnityEngine;
 using UnityEngine.AI;
 using Vector3 = UnityEngine.Vector3;
@@ -15,12 +16,18 @@ public class GathererAi : MonoBehaviour
         LookingForTarget,
         GotoTarget,
         FollowingPath,
-        Gathering
+        Gathering,
+        GotoWoodBuilding
     }
 
-    public LayerMask pathMask;
-    public int gatherSpeed = 4;
+    public WoodBuilding m_ClosestWoodBuilding;
+    public int m_GatherSpeed = 4;
+    public int m_ResourceCarryCapacity = 500;
+    public float m_TreeCheckDistance = 10.0f;
 
+    private static List<Transform> lockedTrees = new List<Transform>();
+
+    private int currentResourceAmount;
     private ResourceSource target;
     private State currentState;
     private NavMeshAgent _agent;
@@ -36,10 +43,11 @@ public class GathererAi : MonoBehaviour
     
     private bool FindNextTarget()
     {
-        var hits = Physics.OverlapSphere(this.transform.position, 10, this.pathMask);
+        var hits = Physics.OverlapSphere(this.transform.position, this.m_TreeCheckDistance, LayerMask.NameToLayer("Everything"));
         this.allNearbyTargets = hits
             .Where(h => h.GetComponent<ResourceSource>() != null)
             .Select(h => h.transform)
+            .Where(t => !lockedTrees.Contains(t))
             .OrderBy(h => Vector3.Distance(this.transform.position, h.transform.position))
             .ToList();
         this.currentTargetIndex = 0;
@@ -48,17 +56,18 @@ public class GathererAi : MonoBehaviour
 
     private IEnumerator FindPathToTargetCoroutine()
     {
-        bool foundPath = false;
+        bool pathFound = false;
         while (this.currentTargetIndex < this.allNearbyTargets.Count)
         {
             var nextTarget = this.allNearbyTargets[this.currentTargetIndex];
             var path = new NavMeshPath();
-            if (this._agent.CalculatePath(nextTarget.position, path))
+            if (this._agent.CalculatePath(nextTarget.position, path) && !lockedTrees.Contains(nextTarget))
             {
+                lockedTrees.Add(nextTarget);
                 this._agent.SetPath(path);
                 this.target = nextTarget.GetComponent<ResourceSource>();
                 SetNewState(State.FollowingPath);
-                foundPath = true;
+                pathFound = true;
                 break;
             }
             else
@@ -68,7 +77,7 @@ public class GathererAi : MonoBehaviour
             }
         }
 
-        if (!foundPath)
+        if (!pathFound)
         {
             Debug.LogError("Tried all nearby targets and couldn't path to any.");
             SetNewState(State.Idle);
@@ -94,16 +103,56 @@ public class GathererAi : MonoBehaviour
     private IEnumerator GatherResources(ResourceSource source)
     {
         source.StartGathering();
-        while (source.resourceAmount > 0)
+        while (source.resourceAmount > 0 && this.currentResourceAmount < this.m_ResourceCarryCapacity)
         {
-            source.GatherResource(gatherSpeed);
+            this.currentResourceAmount += source.GatherResource(m_GatherSpeed, this.m_ResourceCarryCapacity - this.currentResourceAmount);
             if (source.resourceAmount > 0)
             {
                 yield return new WaitForSeconds(1);
             }
         }
 
-        SetNewState(State.LookingForTarget);
+        lockedTrees.Remove(source.transform);
+
+        if (this.currentResourceAmount == this.m_ResourceCarryCapacity)
+        {
+            SetNewState(State.GotoWoodBuilding);
+            StartCoroutine(GotoWoodBuilding(this.m_ClosestWoodBuilding));
+        }
+        else
+        {
+            SetNewState(State.LookingForTarget);
+        }
+    }
+
+    private IEnumerator GotoWoodBuilding(WoodBuilding building)
+    {
+        var buildingPath = new NavMeshPath();
+        if (this._agent.CalculatePath(building.transform.position, buildingPath))
+        {
+            this._agent.SetPath(buildingPath);
+            yield return null;
+            yield return null;
+            while (!CheckPathComplete())
+            {
+                yield return null;
+            }
+
+            this.currentResourceAmount -= building.PlaceWood(this.currentResourceAmount);
+            if (this.currentResourceAmount < this.m_ResourceCarryCapacity)
+            {
+                SetNewState(State.LookingForTarget);
+            }
+            else
+            {
+                Debug.Log("Job's done!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Could not find path to building!!!");
+            SetNewState(State.Idle);
+        }
     }
 
     void Update()
@@ -118,12 +167,10 @@ public class GathererAi : MonoBehaviour
                 }
                 else
                 {
+                    Debug.LogWarning("Could not find new target");
                     SetNewState(State.Idle);
                 }
                 break;
-            //case State.GotoTarget:
-                //SetNewState(FindPathToTargetCoroutine());
-                //break;
             case State.FollowingPath:
                 if (CheckPathComplete())
                 {

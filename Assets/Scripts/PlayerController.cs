@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         source.StartGathering();
         while (source.resourceAmount > 0)
         {
-            WoodResource += source.GatherResource(gatherSpeed);
+            WoodResource += source.GatherResource(gatherSpeed, m_MaxGatherCapacity - WoodResource);
             if (source.resourceAmount > 0)
             {
                 yield return new WaitForSeconds(1);

@@ -75,7 +75,7 @@ public class ResourceSource : MonoBehaviour
         isRegening = false;
     }
 
-    public int GatherResource(int removeAmount)
+    public int GatherResource(int removeAmount, int maxCapacity)
     {
         foreach (var c in colliders)
         {
@@ -83,7 +83,8 @@ public class ResourceSource : MonoBehaviour
         }
 
         int amountBeforeRemoval = resourceAmount;
-        resourceAmount = Mathf.Max(0, resourceAmount - removeAmount);
+        int amountToRemove = Mathf.Min(removeAmount, maxCapacity);
+        resourceAmount = Mathf.Max(0, resourceAmount - amountToRemove);
         effect.OnGather(resourceAmount / (float)initialAmount);
         if (resourceAmount <= 0)
         {
