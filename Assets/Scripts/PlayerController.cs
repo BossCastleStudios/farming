@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
         if (CanGatherResources)
         {
-            if (!IsGathering && Gamepad.current.aButton.isPressed)
+            if (!IsGathering && Gamepad.current.aButton.wasPressedThisFrame)
             {
                 IsGathering = true;
                 isWalking = false;
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
         isWalking = gamepad.leftStick.IsActuated();
 
-            Vector3 direction = new Vector3(gamepadLeftStick.x, 0, gamepadLeftStick.y);
+        Vector3 direction = new Vector3(gamepadLeftStick.x, 0, gamepadLeftStick.y);
         if (direction.magnitude > 0.01F)
         {
             direction = Camera.main.transform.TransformDirection(direction);
