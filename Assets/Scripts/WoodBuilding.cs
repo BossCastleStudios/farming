@@ -6,9 +6,13 @@ namespace com.bosscastlestudios.farming
 {
     public class WoodBuilding : MonoBehaviour
     {
-        public int m_MaxCapacity = 0;
+        public int m_MaxCapacity => PlayerResourceRepository.Instance.maxCapacity;
 
-        public int CurrentResourceAmount { get; private set; }
+        public int CurrentResourceAmount
+        {
+            get => PlayerResourceRepository.Instance.currentAmount;
+            private set => PlayerResourceRepository.Instance.currentAmount = value;
+        }
 
         void Awake()
         {

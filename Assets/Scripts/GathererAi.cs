@@ -140,7 +140,8 @@ public class GathererAi : MonoBehaviour
             }
 
             this.currentResourceAmount -= building.PlaceWood(this.currentResourceAmount);
-            if (this.currentResourceAmount < this.m_ResourceCarryCapacity)
+            if (this.currentResourceAmount < this.m_ResourceCarryCapacity &&
+                PlayerResourceRepository.Instance.currentAmount < PlayerResourceRepository.Instance.maxCapacity)
             {
                 SetNewState(State.LookingForTarget);
             }

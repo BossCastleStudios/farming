@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ClosestWoodBuilding: {fileID: 0}
-  m_GatherSpeed: 12
-  m_ResourceCarryCapacity: 100
+  m_GatherSpeed: 2
+  m_ResourceCarryCapacity: 12
   m_TreeCheckDistance: 1000
 --- !u!195 &6402854406858640697
 NavMeshAgent:

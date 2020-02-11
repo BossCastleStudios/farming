@@ -52,7 +52,7 @@ public class ResourceSource : MonoBehaviour
         while (resourceAmount < initialAmount)
         {
             float percentage = resourceAmount / (float) initialAmount;
-            if (percentage > 0.5f)
+            if (percentage > 0.9f)
             {
                 foreach (var c in colliders)
                 {
@@ -77,11 +77,6 @@ public class ResourceSource : MonoBehaviour
 
     public int GatherResource(int removeAmount, int maxCapacity)
     {
-        foreach (var c in colliders)
-        {
-            c.enabled = false;
-        }
-
         int amountBeforeRemoval = resourceAmount;
         int amountToRemove = Mathf.Min(removeAmount, maxCapacity);
         resourceAmount = Mathf.Max(0, resourceAmount - amountToRemove);
@@ -93,12 +88,26 @@ public class ResourceSource : MonoBehaviour
     {
         effect.StartGathering();
         this.isGathering = true;
+
+        foreach (var c in colliders)
+        {
+            c.enabled = false;
+        }
     }
 
     public void StopGathering()
     {
         this.isGathering = false;
         effect.StopGathering();
+
+        float percentage = resourceAmount / (float)initialAmount;
+        if (percentage > 0.1f)
+        {
+            foreach (var c in colliders)
+            {
+                c.enabled = true;
+            }
+        }
     }
 }
 
